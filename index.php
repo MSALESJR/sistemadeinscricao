@@ -6,7 +6,7 @@
 <!--Fim da Inclusão do Menu na Pagina-->
 
 <!-- Incluido o Conteudo na Pagina -->
-<?php ?>
+<?php require_once 'include/inscricao/inscricao.php';?>
 <!-- Fim da Inclusão do Conteudo na Pagina -->
 
 <!--Incluindo o Footer na Pagina-->
