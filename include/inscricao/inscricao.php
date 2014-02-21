@@ -1,4 +1,6 @@
-
+<?php
+    require_once 'sys/conexao.php';
+?>
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6 well">
@@ -25,7 +27,19 @@
                 <div style="padding-left: 0px;"class="col-md-6">
                     <input type="text" class="form-control" name="bairro" id="bairro" placeholder="Bairro">
                     <input type="text" class="form-control" name="cidade" id="cidade" placeholder="Cidade">
-                    <!--<input type="text" class="form-control" name="nome" id="nome" placeholder="Nome">-->
+                    <select name="uf" id="uf" class="form-control">
+                        <option value="false">Selecione o Estado</option>
+                        <?php
+                            $con = conexao::getConexao();
+                            $query = "SELECT * FROM uf";
+                            $queryresult = $con->prepare($query);
+                            $queryresult->execute();
+                            $lista = $queryresult->fetchAll(PDO::FETCH_OBJ);
+                            foreach($lista as $uf){
+                                echo '<option value="'.$uf->uf.'">'.$uf->estado.'</option>';
+                            }
+                        ?>
+                    </select>
                     <input type="text" class="form-control" name="cep" id="cep" placeholder="CEP">
                 </div>
             </fieldset>
