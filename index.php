@@ -2,7 +2,7 @@
 <!--Fim da Inclusão do Header na Pagina-->
 
 <!--Incluindo o Menu na Pagina-->
-<?php ?>
+<?php require_once './include/menu.php'; ?>
 <!--Fim da Inclusão do Menu na Pagina-->
 
 <!-- Incluido o Conteudo na Pagina -->

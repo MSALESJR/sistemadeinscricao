@@ -1,16 +1,22 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
- * Description of conexao
- *
- * @author Desenvolvimento
- */
-class conexao {
-    //put your code here
+* Cria uma instancia do PDO
+* @return PDO 	
+*
+* @author Marcus Antonio
+*/
+abstract class conexao {
+    static private $conn;
+    public static function getConexao(){
+        if(self::$conn == null){
+            self::$conn = new PDO('mysql:host=2isolucoes.com;dbname=isolusti_inscricao','isolusti_0000','00001');   
+        }
+        return self::$conn;
+    }
 }
+/*
+* Exemplo
+* como obter uma conexao
+* $conn = conexao::getConexao();
+*/
+?>
